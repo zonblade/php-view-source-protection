@@ -26,6 +26,9 @@ under MIT license
 obviously its me lol,<br>
 instagram.com/zonblade
 
+## on work
++ obliterate viewsource mode
+
 ## changelog
 + viewsource_protect.php (depreciated, but still exist, please use NOPARAM instead of this)
 + removing only LOAD parameter
