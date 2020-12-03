@@ -1,24 +1,30 @@
 
-function vsp_start($param,$dir)
+
+function vsp_start($param,$dir,$load_dir)
 {
+    session_start();
     switch($_GET[$param]){
         case "show":
             if(empty($_COOKIE['vsp'])){
-                header("Refresh:0;url=?",true,301);
+                header("Refresh:0;url=?$param=load",true,301);
                 die();
             }else{
                 setcookie("vsp", "", time() - 3600);
-                include $dir;
-                die();
+                if($dir == false){}
+                else
+                {
+                    include $dir;
+                    die();
+                }
             }
             break;
         default:
             setcookie("vsp", "true");
+            include $load_dir;
             header("Refresh:0;url=?$param=show",true,301);
             die();
     }
 };
-
 
 function vsp_inspect($var)
 {
