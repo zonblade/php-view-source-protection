@@ -1,6 +1,7 @@
 # php-view-source-protection
 protect a view source, since f12 and right click can be disabled, so for protecting viewsource this is the way (mandalorian) haha
 
+# viewsource_protect.php
 # usage ID
 view_source_lock($var,$get_param,$get_value,$view_path,$load,$error);<br>
 <b>$var</b> : true/false, kalau true aktif kalau false ya gak aktif,<br>
@@ -15,6 +16,13 @@ view_source_lock($var,$get_param,$get_value,$view_path,$load,$error);<br>
 
 # usage EN
 view_source_lock($var,$get_param,$get_value,$view_path,$load,$error);
+
+# viewsource_noparam.php
+# usage ID
+view_source_noparam();
+
+# usage EN
+view_source_noparam();
 
 # License
 under MIT license
