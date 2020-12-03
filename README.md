@@ -17,7 +17,7 @@ and, outside it's function to trick viewsource, this script can be used as param
 
 # docs
 LANG_ID dokumentasi berbahasa indonesia<br>
-https://github.com/zonblade/php-view-source-protection/wiki/Dokumentasi-Bahasa-Indonesia
+https://github.com/zonblade/php-view-source-protection/wiki/DOC-Indonesian-:-Penggunaan-ViewSource----Render_Load
 <br><br>
 LANG_EN documentation<br>
 soon
