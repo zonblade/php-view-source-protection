@@ -13,11 +13,11 @@ you know, view-source is impossible to hide!
 except for the render method. excluding it from curl or whatsoever.
 and, outside it's function to trick viewsource, this script can be used as parameter management too.
 <b>DEMO Parameter management SOON.</b>
-+ for now this script can only do some trick, but i'm sure there's something in the future.
++ for now this script can only do some trick , but i'm sure there's something in the future.
 
 # docs
 LANG_ID dokumentasi berbahasa indonesia<br>
-https://github.com/zonblade/php-view-source-protection/wiki/DOC-Indonesian-:-Penggunaan-ViewSource----Render_Load
+https://github.com/zonblade/php-view-source-protection/wiki/(active)-ViewSource-Switch
 <br><br>
 LANG_EN documentation<br>
 soon
@@ -28,7 +28,7 @@ latest version check here :<br>
 https://github.com/zonblade/php-view-source-protection/releases<br>
 
 # tested browser
-+ all browsers which support js
++ all modern browsers
 
 # License
 under MIT license
@@ -39,10 +39,11 @@ obviously its me lol,<br>
 instagram.com/zonblade
 
 ## on work
-+ obliterate viewsource mode
 + parameter management (multi parameter);
 
 ## changelog
++ obliterate viewsource mode added
++ changing the code entirely
 + <b>ADD PARAMETER MANAGEMENT</B>
 + viewsource_protect.php (depreciated, but still exist, please use NOPARAM instead of this)
 + removing only LOAD parameter
