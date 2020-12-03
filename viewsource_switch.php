@@ -1,9 +1,14 @@
-
+<?php
+function vsp_kill()
+{
+    /*gunakan ini jika kurang yakin ter kill cookienya */
+    session_start();
+    setcookie("vsp", "", time() - 3600);
+}
 
 function vsp_start($param,$dir,$load_dir)
 {
     session_start();
-    setcookie("vsp", "", time() - 3600);
     switch($_GET[$param]){
         case "show":
             if(empty($_COOKIE['vsp'])){
@@ -11,10 +16,12 @@ function vsp_start($param,$dir,$load_dir)
                 header("Refresh:0;url=?$param=load",true,301);
                 die();
             }else{
-                setcookie("vsp", "", time() - 3600);
-                if($dir == false){}
+                if($dir == false){
+                    setcookie("vsp", "", time() - 3600);
+                }
                 else
                 {
+                    setcookie("vsp", "", time() - 3600);
                     include $dir;
                     die();
                 }
