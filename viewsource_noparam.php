@@ -14,6 +14,7 @@ class vsp {
         $this->path = $path;
         $this->keys = $key;
     }
+
     function render_load(){
         if(isset($_POST['flock_load'])){
             if($_POST['flock_load'] == $this->keys){
@@ -22,6 +23,7 @@ class vsp {
             };
         };
     }
+
     function inspect($var){
         /*
         kode javascript didapatkan dari stackoverflow 
@@ -29,7 +31,6 @@ class vsp {
         thanks to PK-1825
         */
         $this->inspect = '
-            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
             <script type="text/javascript">
             document.addEventListener("contextmenu", event => event.preventDefault());
             window.onload = function () {
