@@ -13,6 +13,7 @@ https://retas.dev/demo_script/viewsource.php
 + Chrome
 + Edge
 + IE
++ Firefox (MUST ENABLE INSPECT PROTECTION)
 
 # License
 under MIT license
@@ -23,4 +24,5 @@ obviously its me lol,<br>
 instagram.com/zonblade
 
 ## changelog
++ Adding Firefox compability
 + Fixing Firefox compability
