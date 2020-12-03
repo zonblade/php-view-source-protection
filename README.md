@@ -39,6 +39,7 @@ instagram.com/zonblade
 
 ## on work
 + obliterate viewsource mode
++ parameter management (multi parameter);
 
 ## changelog
 + <b>ADD PARAMETER MANAGEMENT</B>
