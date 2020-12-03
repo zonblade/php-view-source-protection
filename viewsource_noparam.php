@@ -1,6 +1,9 @@
 <?php
 class vsp {
-    /* penjelasannya mirip ya seperti viewsource_protect */
+    /* 
+    penjelasannya mirip ya seperti viewsource_protect
+    untuk memahaminya silahkan melihat file yang satu lagi, penjelasannya jelas disana.
+    */
     function loader($dir,$time){
         $this->loader       = $dir;
         $this->loader_time  = $time;
