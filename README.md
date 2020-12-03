@@ -4,7 +4,8 @@ protect a view source, since f12 and right click can be disabled, so for protect
 # about this code
 this code was intended to protect HTML files using simple render tools.
 which is usefull for UI/UX demo sites.<br>
-<b> developer of this code (me), are still active developing this code, feel free to post an issue or request</b>
+<b> developer of this code (me), are still active developing this code, feel free to post an issue or request</b><br>
+feel free to modify this code as you need :)
 
 
 # docs
