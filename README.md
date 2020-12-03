@@ -9,6 +9,10 @@ soon
 <br><br>
 live DEMO:<br>
 https://retas.dev/demo_script/viewsource.php
+# tested browser
++ Chrome
++ Edge
++ IE
 
 # License
 under MIT license
@@ -17,3 +21,6 @@ under MIT license
 ## Created by 
 obviously its me lol,<br>
 instagram.com/zonblade
+
+## changelog
++ Fixing Firefox compability
