@@ -36,6 +36,7 @@ instagram.com/zonblade
 + obliterate viewsource mode
 
 ## changelog
++ add parameter based.
 + viewsource_protect.php (depreciated, but still exist, please use NOPARAM instead of this)
 + removing only LOAD parameter
 + Adding Load Render fixing Firefox bug.
