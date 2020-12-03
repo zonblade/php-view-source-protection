@@ -10,10 +10,7 @@ soon
 live DEMO:<br>
 https://retas.dev/demo_script/viewsource.php
 # tested browser
-+ Chrome
-+ Edge
-+ IE
-+ Firefox (MUST ENABLE INSPECT PROTECTION)
++ all browsers which support js
 
 # License
 under MIT license
@@ -24,5 +21,6 @@ obviously its me lol,<br>
 instagram.com/zonblade
 
 ## changelog
++ Adding Load Render fixing Firefox bug.
 + Adding Firefox compability
 + Fixing Firefox compability
