@@ -3,7 +3,8 @@ protect a view source, since f12 and right click can be disabled, so for protect
 
 # about this code
 this code was intended to protect HTML files using simple render tools.
-which is usefull for UI/UX demo sites.
+which is usefull for UI/UX demo sites.<br>
+<b> developer of this code (me), are still active developing this code, feel free to post an issue or request</b>
 
 
 # docs
@@ -14,7 +15,10 @@ LANG_EN documentation<br>
 soon
 <br><br>
 live DEMO:<br>
-https://retas.dev/demo_script/viewsource.php
+https://retas.dev/demo_script/viewsource.php<br>
+latest version check here :<br>
+https://github.com/zonblade/php-view-source-protection/releases<br>
+
 # tested browser
 + all browsers which support js
 
