@@ -9,6 +9,11 @@ function vsp_kill()
 function vsp_start($param,$dir,$load_dir)
 {
     session_start();
+    if(isset($_GET) && !isset($_GET[$param]) && empty($_GET)){
+        setcookie("vsp", "", time() - 3600);
+        header("Refresh:0;url=?$param=load",true,301);
+        die();
+    }
     switch($_GET[$param]){
         case "show":
             if(empty($_COOKIE['vsp'])){
@@ -27,12 +32,28 @@ function vsp_start($param,$dir,$load_dir)
                 }
             }
             break;
-        default:
+        case 'load':
             setcookie("vsp", "", time() - 3600);
             setcookie("vsp", "true");
             include $load_dir;
             header("Refresh:0;url=?$param=show",true,301);
             die();
+        default:
+            if(empty($_COOKIE['vsp'])){
+                setcookie("vsp", "", time() - 3600);
+                header("Refresh:0;url=?$param=load",true,301);
+                die();
+            }else{
+                if($dir == false){
+                    setcookie("vsp", "", time() - 3600);
+                }
+                else
+                {
+                    setcookie("vsp", "", time() - 3600);
+                    include $dir;
+                    die();
+                }
+            }
     }
 };
 
