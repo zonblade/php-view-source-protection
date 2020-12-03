@@ -6,6 +6,27 @@ function vsp_kill()
     setcookie("vsp", "", time() - 3600);
 }
 
+/*
+param init sama param vsp_start kudu sama ya
+taruh vsp_init() dibawah vsp_start();
+contoh
+
+.......kode....
+$param = 'about';
+vsp_start($param,false,false);
+vsp_init($param);
+...kode selesai...
+
+bertujaun untuk menghindari repeated request,
+*/
+function vsp_init($param){
+    if(empty($_COOKIE['vsp'])){
+        setcookie("vsp", "", time() - 3600);
+        header("Refresh:0;url=?$param=load",true,301);
+        die();
+    }
+}
+
 function vsp_start($param,$dir,$load_dir)
 {
     session_start();
@@ -56,6 +77,7 @@ function vsp_start($param,$dir,$load_dir)
             }
     }
 };
+
 
 function vsp_inspect($var)
 {
