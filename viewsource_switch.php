@@ -3,9 +3,11 @@
 function vsp_start($param,$dir,$load_dir)
 {
     session_start();
+    setcookie("vsp", "", time() - 3600);
     switch($_GET[$param]){
         case "show":
             if(empty($_COOKIE['vsp'])){
+                setcookie("vsp", "", time() - 3600);
                 header("Refresh:0;url=?$param=load",true,301);
                 die();
             }else{
@@ -19,6 +21,7 @@ function vsp_start($param,$dir,$load_dir)
             }
             break;
         default:
+            setcookie("vsp", "", time() - 3600);
             setcookie("vsp", "true");
             include $load_dir;
             header("Refresh:0;url=?$param=show",true,301);
