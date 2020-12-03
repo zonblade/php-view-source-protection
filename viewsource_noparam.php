@@ -8,6 +8,20 @@ class vsp {
         $this->loader       = $dir;
         $this->loader_time  = $time;
     }
+
+    function render_opt($render,$path,$key){
+        $this->render = $render;
+        $this->path = $path;
+        $this->keys = $key;
+    }
+    function render_load(){
+        if(isset($_POST['flock_load'])){
+            if($_POST['flock_load'] == $this->keys){
+                include $this->path;
+                die();
+            };
+        };
+    }
     function inspect($var){
         /*
         kode javascript didapatkan dari stackoverflow 
@@ -61,6 +75,7 @@ class vsp {
             echo $this->inspect;
         }
     }
+
     function start(){
         session_start();
         if($_GET['load'] == 'on'){
@@ -71,7 +86,10 @@ class vsp {
                 $time = 0;
             }
             $_SESSION["protect"] = true;
-            header("Refresh:$time;url=?");
+            $link_situs = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+            $link_situs = preg_replace('/(&|\?)'.preg_quote('load').'=[^&]*$/', '', $link_situs);
+            $link_situs = preg_replace('/(&|\?)'.preg_quote('load').'=[^&]*&/', '$1', $link_situs);
+            header("Refresh:$time;url=$link_situs");
             die();
         }else{
             switch($_SESSION['protect']){
@@ -80,6 +98,35 @@ class vsp {
                     die();
                     break;
                 default :
+                    $_SESSION['protect'] = false;
+                    if($this->render == true){
+                        echo '
+<vsprender>
+';
+include $this->loader;
+echo '
+<!-- this is render stage -->
+</vsprender>
+<script id="load_1" src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script id="load_2"type="text/javascript">
+$.ajax({
+url : "?",
+method : "POST",
+data: {
+    "flock_load": "'.$this->keys.'",
+},
+success: function(data){
+    $("html").html(data);
+    $("#load_1").remove();
+    $("#load_2").remove();
+}
+});
+</script>
+';
+                        die();
+                    }else{
+                        include $this->path;
+                    }
             }
         }
     }
@@ -87,5 +134,8 @@ class vsp {
     function stop(){
         session_start();
         $_SESSION['protect'] = false;
+    }
+
+    function start_render($render,$path,$key){
     }
 }
