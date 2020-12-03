@@ -21,6 +21,8 @@ obviously its me lol,<br>
 instagram.com/zonblade
 
 ## changelog
++ viewsource_protect.php (depreciated, but still exist, please use NOPARAM instead of this)
++ removing only LOAD parameter
 + Adding Load Render fixing Firefox bug.
 + Adding Firefox compability
 + Fixing Firefox compability
