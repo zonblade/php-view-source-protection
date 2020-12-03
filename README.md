@@ -2,6 +2,7 @@
 protect a view source, since f12 and right click can be disabled, so for protecting viewsource this is the way (mandalorian) haha
 
 # about this code
+this is raw code, edit it as fits your system build with basic logic.<br>
 this code was <b><u>intended to protect HTML files</u></b> using simple render tools.
 which is usefull for UI/UX demo sites.<br>
 <b> developer of this code (me), are still active developing this code, feel free to post an issue or request</b><br>
