@@ -1,6 +1,7 @@
 # php-view-source-protection
 protect a view source, since f12 and right click can be disabled, so for protecting viewsource this is the way (mandalorian) haha
 
+# new version released!
 # about this code
 this is raw code, edit it as fits your system build with basic logic.<br>
 this code was <b><u>intended to protect HTML files</u></b> using simple render tools.
@@ -9,10 +10,7 @@ which is usefull for UI/UX demo sites.<br>
 feel free to modify this code as you need :)
 
 + why do i even need this if its is cant hide it completely?
-you know, view-source is impossible to hide!
-except for the render method. excluding it from curl or whatsoever.
-and, outside it's function to trick viewsource, this script can be used as parameter management too.
-<b>DEMO Parameter management SOON.</b>
+you know, view-source is impossible to hide! but now your dream come true! you can hide your viewsource ;)
 + for now this script can only do some trick , but i'm sure there's something in the future.
 
 # docs
