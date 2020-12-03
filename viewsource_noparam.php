@@ -5,25 +5,13 @@ class vsp {
     untuk memahaminya silahkan melihat file yang satu lagi, penjelasannya jelas disana.
     */
     function loader($dir,$time){
-        $this->loader       = $dir;
-        $this->loader_time  = $time;
+        if($dir != null){
+            $this->loader       = $dir;
+            $this->loader_time  = $time;
+        }else{
+            $this->loader_time  = 0;
+        }
     }
-
-    function render_opt($render,$path,$key){
-        $this->render = $render;
-        $this->path = $path;
-        $this->keys = $key;
-    }
-
-    function render_load(){
-        if(isset($_POST['flock_load'])){
-            if($_POST['flock_load'] == $this->keys){
-                include $this->path;
-                die();
-            };
-        };
-    }
-
     function inspect($var){
         /*
         kode javascript didapatkan dari stackoverflow 
@@ -76,7 +64,19 @@ class vsp {
             echo $this->inspect;
         }
     }
-
+    function render_opt($render,$path,$key){
+        $this->render = $render;
+        $this->path = $path;
+        $this->keys = $key;
+    }
+    function render_load(){
+        if(isset($_POST['flock_load'])){
+            if($_POST['flock_load'] == $this->keys){
+                include $this->path;
+                die();
+            };
+        };
+    }
     function start(){
         session_start();
         if($_GET['load'] == 'on'){
@@ -102,41 +102,50 @@ class vsp {
                     $_SESSION['protect'] = false;
                     if($this->render == true){
                         echo '
-<vsprender>
-';
+<vsprender>';
 include $this->loader;
-echo '
-<!-- this is render stage -->
-</vsprender>
+echo '<!-- this is render stage --></vsprender>
 <script id="load_1" src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <script id="load_2"type="text/javascript">
-$.ajax({
-url : "?",
-method : "POST",
-data: {
-    "flock_load": "'.$this->keys.'",
-},
-success: function(data){
-    $("html").html(data);
-    $("#load_1").remove();
-    $("#load_2").remove();
-}
-});
+$.ajax({url:"?",method:"POST",data:{flock_load:"'.$this->keys.'"},success:function(o){$("html").html(o),$("#load_1").remove(),$("#load_2").remove()}});
 </script>
 ';
                         die();
                     }else{
                         include $this->path;
+                        die();
                     }
             }
         }
     }
-
     function stop(){
         session_start();
         $_SESSION['protect'] = false;
     }
-
-    function start_render($render,$path,$key){
+    function param_load($strict_param,$strict_value,$file_dir){
+        $this->StrictCase   = $strict_param;
+        $this->StrictDir    = $file_dir;
+        $this->StrictVal    = $strict_value;
+    }
+    function param_start(){
+        switch($_GET[$this->StrictCase]){
+            case "$this->StrictVal":
+                session_start();
+                if($_SESSION['strict'] != true){
+                    header("location: ?$this->StrictCase=load");
+                    die();
+                }else{
+                    require_once $this->StrictDir;
+                    $_SESSION['strict'] = false;
+                    die();
+                }
+                break;
+            default:
+                session_start();
+                $_SESSION['strict'] = true;
+                include $this->loader;
+                header("Refresh:$this->loader_time; url=?$this->StrictCase=$this->StrictVal",true,301);
+                die();
+        }
     }
 }
