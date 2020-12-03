@@ -13,6 +13,7 @@ you know, view-source is impossible to hide!
 except for the render method. excluding it from curl or whatsoever.
 and, outside it's function to trick viewsource, this script can be used as parameter management too.
 <b>DEMO Parameter management SOON.</b>
++ for now this script can only do some trick, but i'm sure there's something in the future.
 
 # docs
 LANG_ID dokumentasi berbahasa indonesia<br>
