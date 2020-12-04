@@ -2,6 +2,9 @@
 protect a view source, since f12 and right click can be disabled, so for protecting viewsource this is the way (mandalorian) haha
 
 # new version released! Ver 2.0.2 (4 Des 2020), PHP 7.X
+# introducing secure page builder on next update 5 Des 2020
+vsp_builder();<br>
+vsp_default();<br><br>
 # about this code
 this is raw code, edit it as fits your system build with basic logic.<br>
 this code was <b><u>intended to protect HTML files</u></b> using simple render tools.
