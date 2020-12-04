@@ -1,5 +1,8 @@
 <?php
 function vsp_loader($dir){
+    /*
+    MENDEFINISIKAN LOADER, UNTUK DIPAKAI PADA FUNCTION SELANJUTNYA,
+    */
     return define("VSP_LOADER",$dir);
 }
 function vsp_inspect($var)
@@ -57,49 +60,117 @@ function vsp_inspect($var)
 };
 function vsp_start($param,$dir,$load_dir)
 {
+    /*
+    MENDEFINISIKAN SESSION
+    */
     session_start();
     if(isset($_GET) && !isset($_GET[$param]) && empty($_GET)){
+        /*
+        set cookie ke kosong, untung menghapus cookie penerima
+        penting untuk mengosongkan viewsource
+        */
         setcookie("vsp", "", time() - 3600);
+        /*
+        jika loader set true, tampilkan loader
+        */
+        if($load_dir == true){include VSP_LOADER;};
+        /*
+        fungsi refresh untuk kembali ke parameter yang ditentukan,
+        */
         header("Refresh:0;url=?$param=load",true,301);
         die();
     }
     switch($_GET[$param]){
         case "show":
             if(empty($_COOKIE['vsp'])){
+                /*
+                set cookie ke kosong, untung menghapus cookie penerima
+                penting untuk mengosongkan viewsource
+                */
                 setcookie("vsp", "", time() - 3600);
+                /*
+                jika loader set true, tampilkan loader
+                */
                 if($load_dir == true){include VSP_LOADER;};
+                /*
+                fungsi refresh untuk kembali ke parameter yang ditentukan,
+                */
                 header("Refresh:0;url=?$param=load",true,301);
                 die();
             }else{
                 if($dir == false){
+                    /*
+                    set cookie ke kosong, untung menghapus cookie penerima
+                    penting untuk mengosongkan viewsource
+                    */
                     setcookie("vsp", "", time() - 3600);
                 }
                 else
                 {
+                    /*
+                    set cookie ke kosong, untung menghapus cookie penerima
+                    penting untuk mengosongkan viewsource
+                    */
                     setcookie("vsp", "", time() - 3600);
+                    /*
+                    include file yang akan ditampilkan,
+                    dapat berupa controler maupun viewnya langsung.
+                    */
                     include $dir;
                     die();
                 }
             }
             break;
         case 'load':
+            /*
+            set cookie ke kosong, untung menghapus cookie penerima
+            penting untuk mengosongkan viewsource
+            */
             setcookie("vsp", "", time() - 3600);
+            /*
+            menyalakan cookie 1x untuk validasi
+            cookie ini sangat penting.
+            */
             setcookie("vsp", "true");
+            /*
+            jika loader set true, tampilkan loader
+            */
             if($load_dir == true){include VSP_LOADER;};
+            /*
+            fungsi refresh untuk kembali ke parameter yang ditentukan,
+            */
             header("Refresh:0;url=?$param=show",true,301);
             die();
         default:
             if(empty($_COOKIE['vsp'])){
+                /*
+                set cookie ke kosong, untung menghapus cookie penerima
+                penting untuk mengosongkan viewsource
+                */
                 setcookie("vsp", "", time() - 3600);
+                /*
+                jika loader set true, tampilkan loader
+                */
                 if($load_dir == true){include VSP_LOADER;};
+                /*
+                fungsi refresh untuk kembali ke parameter yang ditentukan,
+                */
                 header("Refresh:0;url=?$param=load",true,301);
                 die();
             }else{
                 if($dir == false){
+                    /*
+                    set cookie ke kosong, untung menghapus cookie penerima
+                    penting untuk mengosongkan viewsource
+                    */
                     setcookie("vsp", "", time() - 3600);
                 }
                 else
                 {
+                    /*
+                    set cookie ke kosong, untung menghapus cookie penerima
+                    penting untuk mengosongkan viewsource
+                    */
                     setcookie("vsp", "", time() - 3600);
                     include $dir;
                     die();
@@ -110,14 +181,31 @@ function vsp_start($param,$dir,$load_dir)
 
 function vsp_init($param,$load_dir){
     if(empty($_COOKIE['vsp'])){
+        /*
+        set cookie ke kosong, untung menghapus cookie penerima
+        penting untuk mengosongkan viewsource
+        */
         setcookie("vsp", "", time() - 3600);
+        /*
+        jika loader set true, tampilkan loader
+        */
         if($load_dir == true){include VSP_LOADER;};
+        /*
+        fungsi refresh untuk kembali ke parameter yang ditentukan,
+        */
         header("Refresh:0;url=?$param=load",true,301);
         die();
     }
 }
 function vsp_kill(){
+    /*
+    MENDEFINISIKAN SESSION
+    */
     session_start();
+    /*
+    set cookie ke kosong, untung menghapus cookie penerima
+    penting untuk mengosongkan viewsource
+    */
     setcookie("vsp", "", time() - 3600);
 }
 
