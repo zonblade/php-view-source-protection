@@ -8,7 +8,12 @@ https://github.com/zonblade/php-view-source-protection/tree/main/module/for%20no
 *__Sample Codes__*<br><br>
 https://retas.dev/demo_script/viewsource.php?about=load&samplecodes<br>
 this version is not suitable for production!<br>
-i expect to be production ready when hits version 3 <br>
+i expect to be production ready when hits version 3 <br><br>
+*__whats new?__*<br>
++ multi param! ?home=show&param2=x&param3=x&and_so_on<br>
++ safer method
++ build in redirect option
+
 <br>
 # about this code
 this is raw code, edit it as fits your system build with basic logic.<br>
