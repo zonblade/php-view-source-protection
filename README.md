@@ -13,7 +13,7 @@ i expect to be production ready when hits version 3 <br><br>
 + multi param! ?home=show&param2=x&param3=x&and_so_on<br>
 + safer method
 + build in redirect option
-<br>
++ build in anti rightclick, ctrl+u & f12
 <br>
 
 # about this code
