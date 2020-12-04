@@ -1,12 +1,8 @@
 <?php
-/*
-THIS IS UNSTABLE VERSION
-*/
-
-function vsp_loader($dir){
+function vsp_loader($dir)
+{
     return define("VSP_LOADER",$dir);
-}
-
+};
 function vsp_inspect($var)
 {
     /*
@@ -63,20 +59,62 @@ function vsp_inspect($var)
 function vsp_start($param,$dir,$load_dir)
 {
     session_start();
-    if(isset($_GET) && !isset($_GET[$param]) && empty($_GET)){
+    /*
+    getting other params to save while loading
+    */
+    $uri_current = $_SERVER['REQUEST_URI'];
+    $uri_confirm = substr($uri_current, strpos($uri_current, "&") + 1);
+    if(strpos($uri_current, '&') !== false){
+        $back_param = "&".$uri_confirm;
+    }else{
+        $back_param = '';
+    }
+    /*
+    filter for not looping if got same param as main parameter!
+    contohnya
+    ?home=show&home=blabla > akan redirect ke ?home=load
+    ?invalid=show&about= > akan redirect ke ?about=load
+    */
+    if(strpos($back_param, $param) !== false)
+    {
+        /*
+        fungsi clear cookies & redirect
+        */
         setcookie("vsp", "", time() - 3600);
+        if($load_dir == true){include VSP_LOADER;};
         header("Refresh:0;url=?$param=load",true,301);
         die();
     }
+    /*
+    checking up if everything exist
+    */
+    if(isset($_GET) && !isset($_GET[$param]) && empty($_GET))
+    {
+        /*
+        fungsi clear cookies & redirect
+        */
+        setcookie("vsp", "", time() - 3600);
+        if($load_dir == true){include VSP_LOADER;};
+        header("Refresh:0;url=?$param=load$back_param",true,301);
+        die();
+    }
+    /*
+    getting the real deal
+    */
     switch($_GET[$param]){
         case "show":
-            if(empty($_COOKIE['vsp'])){
+            if(empty($_COOKIE['vsp']))
+            {
+                /*
+                fungsi clear cookies & redirect
+                */
                 setcookie("vsp", "", time() - 3600);
                 if($load_dir == true){include VSP_LOADER;};
-                header("Refresh:0;url=?$param=load",true,301);
+                header("Refresh:0;url=?$param=load$back_param",true,301);
                 die();
             }else{
-                if($dir == false){
+                if($dir == false)
+                {
                     setcookie("vsp", "", time() - 3600);
                 }
                 else
@@ -88,19 +126,29 @@ function vsp_start($param,$dir,$load_dir)
             }
             break;
         case 'load':
+            /*
+            fungsi load, disinilah kuncinya
+            */
             setcookie("vsp", "", time() - 3600);
             setcookie("vsp", "true");
             if($load_dir == true){include VSP_LOADER;};
-            header("Refresh:0;url=?$param=show",true,301);
+            header("Refresh:0;url=?$param=show$back_param",true,301);
             die();
         default:
-            if(empty($_COOKIE['vsp'])){
+            if(empty($_COOKIE['vsp']))
+            {
+                /*
+                fungsi clear cookies & redirect
+                */
                 setcookie("vsp", "", time() - 3600);
                 if($load_dir == true){include VSP_LOADER;};
-                header("Refresh:0;url=?$param=load",true,301);
+                header("Refresh:0;url=?$param=load$back_param",true,301);
                 die();
-            }else{
-                if($dir == false){
+            }
+            else
+            {
+                if($dir == false)
+                {
                     setcookie("vsp", "", time() - 3600);
                 }
                 else
@@ -112,35 +160,60 @@ function vsp_start($param,$dir,$load_dir)
             }
     }
 };
-
-function vsp_init($param,$load_dir){
+function vsp_init($param,$load_dir)
+{
     if(empty($_COOKIE['vsp'])){
+        /*
+        fungsi clear cookies & redirect
+        */
         setcookie("vsp", "", time() - 3600);
         if($load_dir == true){include VSP_LOADER;};
         header("Refresh:0;url=?$param=load",true,301);
         die();
     }
-}
-function vsp_kill(){
-    session_start();
-    setcookie("vsp", "", time() - 3600);
-}
-
-function vsp_builder($param,$dir,$load_dir){
-    if(isset($_GET[$param])){
-        vsp_start(  $param,$dir,$load_dir);
-        vsp_init(   $param,$load_dir);
-        die();
+};
+function vsp_builder($type,$param,$dir,$load_dir)
+{
+    if($type == 'load')
+    {
+        if(isset($_GET[$param]) && $dir != 'redirect')
+        {
+            vsp_start(  $param,$dir,$load_dir);
+            vsp_init(   $param,$load_dir);
+            die();
+        }
     }
-}
 
-function vsp_default($var,$dir,$redir_url){
-    if($dir != 'redirect' && $redir_url == false){
+    if($type == 'redirect')
+    {
+        if(isset($_GET[$param]) && $load_dir == true)
+        {
+            header("location: $dir");
+            die();
+        }
+        elseif(isset($_GET[$param]) && $load_dir == false)
+        {
+            header("location: ?");
+            die();
+        }
+    }
+};
+function vsp_default($var,$dir,$redir_url)
+{
+    if($dir != 'redirect' && $redir_url == false)
+    {
         if($var == true){
             include $dir;
         }
-    }elseif($dir == 'redirect' && $redir_url != false){
-        header("location: $redir_url");
+    }
+    elseif($dir == 'redirect' && $redir_url != false)
+    {
+        header("location: ?$redir_url=");
         die();
     }
-}
+};
+function vsp_kill()
+{
+    session_start();
+    setcookie("vsp", "", time() - 3600);
+};
