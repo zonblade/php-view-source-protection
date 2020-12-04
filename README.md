@@ -4,17 +4,7 @@ protect a view source, since f12 and right click can be disabled, so for protect
 # new version released! Ver 2.0.2 (4 Des 2020), PHP 7.X
 __introducing secure page builder on next update 5 Des 2020__<br>
 *__Sample Codes__*<br><br>
-require \_\_DIR_\_."/viewsource_clean.php";<br>
-vsp_kill();<br>
-vsp_inspect(false);<br>
-/* input loader */<br>
-vsp_loader(\_\_DIR_\_."/view/loader.html");<br>
-/\* page builder */<br>
-vsp_builder('home',\_\_DIR_\_."/view/home.html",true);<br>
-vsp_builder('about',\_\_DIR_\_."/view/about.html",true);<br>
-vsp_builder('clean',\_\_DIR_\_."/view/clean.html",false);<br>
-vsp_default(true,"redirect","?home=");<br>
-vsp_kill();<br>
+https://retas.dev/demo_script/viewsource.php?about=load&samplecodes<br>
 <br>
 # about this code
 this is raw code, edit it as fits your system build with basic logic.<br>
