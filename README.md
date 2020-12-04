@@ -42,10 +42,8 @@ under MIT license
 obviously its me lol,<br>
 instagram.com/zonblade
 
-## on work
-+ parameter management (multi parameter);
-
 ## changelog
++ parameter management (multi parameter);
 + *updated Documentation ID*
 + obliterate viewsource mode added
 + changing the code entirely
