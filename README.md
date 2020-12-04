@@ -4,8 +4,13 @@ protect a view source, since f12 and right click can be disabled, so for protect
 # quick how to use
 ├&nbsp;index.php (can be anything too)<br>
 &nbsp;&nbsp;&nbsp;└ require "<your_OWN_directory>/viewsource_clean.php";<br>
-  (can be anywhere in the world lol i mean folder)
-
+  (can be anywhere in the world lol i mean folder)<br>
+```
+<?php
+require /var/www/html/anywhere/anywhare/viewsource_clean.php;
+/*codes here*/
+```
+<br>
 
 # new version released! Ver 2.0.3 D5 , PHP 7.X
 __introducing secure page builder (read the docs)<br>
