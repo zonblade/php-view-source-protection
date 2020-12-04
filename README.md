@@ -3,6 +3,8 @@ protect a view source, since f12 and right click can be disabled, so for protect
 
 # new version released! Ver 2.0.3 D5 , PHP 7.X
 __introducing secure page builder (read the docs)<br>
+*__sample websites ready to run__*<br>
+https://github.com/zonblade/php-view-source-protection/tree/main/module/for%20non%20php%20programmers/simple%20websites<br><br>
 *__Sample Codes__*<br><br>
 https://retas.dev/demo_script/viewsource.php?about=load&samplecodes<br>
 this version is not suitable for production!<br>
