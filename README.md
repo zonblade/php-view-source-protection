@@ -1,6 +1,12 @@
 # php-view-source-protection
 protect a view source, since f12 and right click can be disabled, so for protecting viewsource this is the way (mandalorian) haha
 
+# quick how to use
+├&nbsp;index.php (can be anything too)<br>
+&nbsp;&nbsp;&nbsp;└ require "<your_OWN_directory>/viewsource_clean.php";<br>
+  (can be anywhere in the world lol i mean folder)
+
+
 # new version released! Ver 2.0.3 D5 , PHP 7.X
 __introducing secure page builder (read the docs)<br>
 *__sample websites ready to run__*<br>
