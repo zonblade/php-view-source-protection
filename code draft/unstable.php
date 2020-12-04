@@ -174,7 +174,7 @@ function vsp_init($param,$load_dir)
 };
 function vsp_builder($type,$param,$dir,$load_dir)
 {
-    if($type == 'print')
+    if($type == 'load')
     {
         if(isset($_GET[$param]) && $dir != 'redirect')
         {
