@@ -1,8 +1,8 @@
 # php-view-source-protection
 protect a view source, since f12 and right click can be disabled, so for protecting viewsource this is the way (mandalorian) haha
 
-# new version released! Ver 2.0.2 (4 Des 2020), PHP 7.X
-__introducing secure page builder on next update 5 Des 2020__<br>
+# new version released! Ver 2.0.3 D5 , PHP 7.X
+__introducing secure page builder (read the docs)<br>
 *__Sample Codes__*<br><br>
 https://retas.dev/demo_script/viewsource.php?about=load&samplecodes<br>
 this version is not suitable for production!<br>
