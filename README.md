@@ -13,8 +13,9 @@ i expect to be production ready when hits version 3 <br><br>
 + multi param! ?home=show&param2=x&param3=x&and_so_on<br>
 + safer method
 + build in redirect option
-
 <br>
+<br>
+
 # about this code
 this is raw code, edit it as fits your system build with basic logic.<br>
 this code was <b><u>intended to protect HTML files</u></b> using simple render tools.
