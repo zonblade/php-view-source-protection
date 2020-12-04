@@ -5,6 +5,8 @@ protect a view source, since f12 and right click can be disabled, so for protect
 __introducing secure page builder on next update 5 Des 2020__<br>
 *__Sample Codes__*<br><br>
 https://retas.dev/demo_script/viewsource.php?about=load&samplecodes<br>
+this version is not suitable for production!<br>
+i expect to be production ready when hits version 3 <br>
 <br>
 # about this code
 this is raw code, edit it as fits your system build with basic logic.<br>
