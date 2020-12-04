@@ -1,0 +1,54 @@
+<h1>
+    v 2.0.3
+</h1>
+<div style="padding:20px">
+    <a href="https://github.com/zonblade/php-view-source-protection/releases"> download source code <b>on github</b></a><br>
+    <a href="?home="> <b>Home</b></a>, <a href="?clean="> <b>Sample Clean Viewsource</b></a>
+</div>
+
+<pre style="padding:20px">
+<span style="font-size:1.3rem">
+
+# tested
+</span>
+Chrome, IE, Opera, Firefox, Edge, most of modern browser<br>
+viewsource clean.<br>
+
+<span style="font-size:1.3rem">
+# fitur
+</span>
+<b>vsp_inspect(true/false)</b><br>
+jika <b>true</b> maka F12 dan klik kanan akan ter-disable.<br>
+<br><br>
+<b>vsp_start($param,false/$dir,false/$loader);</b><br>
+<b>$param</b> = contoh domain.com/?PARAM misal diisi <i>about</i><br>
+<b>false/$dir</b> = jika <i>false</i> maka kode yang berada dibawah <u>vsp_start</u> akan berjalan<br>
+jika mengisi <b>&dir</b> maka path yang ditentukan tersbut yang akan muncul.<br>
+<b>false/$loader</b> = jika <i>false</i> maka view loader kalian tidak akan berjalan<br>
+jika mengisi <b>&loader</b> maka loader yang ditentukan tersbut yang akan muncul.<br>
+
+<span style="font-size:1.3rem">
+# contoh kode 1
+</span>
+<br>
+require "/viewsource_switch.php";<br>
+vsp_kill();<br>
+vsp_inspect(true);<br>
+vsp_start('about',false,__DIR__."/loader.php");<br>
+vsp_init('about);<br>
+/\*kode berjalan dibawah vsp_start\*/<br>
+echo 'maka kode ini akan berjalan, dan memiliki loader, kalau gakmau tinggal diganti ke false';<br>
+vsp_kill();<br><br>
+<span style="font-size:1.3rem">
+# contoh kode 2
+</span>
+<br>
+require "/viewsource_switch.php";<br>
+vsp_kill();<br>
+vsp_inspect(true);<br>
+vsp_start('about',__DIR__."/view_about.php",__DIR__."/loader.php");<br>
+vsp_init('about);<br>
+/\*kode dibawah ini tidak akan berjalan, dan akan menjalankan kode view_about tersebut\*/<br>
+
+</pre>
+
