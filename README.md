@@ -28,7 +28,7 @@ soon
 <br><br>
 live DEMO:<br>
 https://retas.dev/demo_script/viewsource.php<br>
-latest version check here :<br>
+latest version (ready to use) check here :<br>
 https://github.com/zonblade/php-view-source-protection/releases<br>
 
 # tested browser
