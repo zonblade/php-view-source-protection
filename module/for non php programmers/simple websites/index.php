@@ -27,6 +27,6 @@ jika digunakan secara berulang akan menimbulkan error!
 */
 vsp_default(true        ,"redirect"  ,"home");
 /*
-kill again
+kill again 
 */
 vsp_kill();
