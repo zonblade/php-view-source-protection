@@ -1,6 +1,10 @@
 # php-view-source-protection
 protect a view source, since f12 and right click can be disabled, so for protecting viewsource this is the way (mandalorian) haha
 
+# emergency release
+
+if you using D5 version update it to 2.0.3.1 D5.1
+
 # quick how to use
 ├&nbsp;index.php (can be anything too)<br>
 &nbsp;&nbsp;&nbsp;└ require "<your_OWN_directory>/viewsource_clean.php";<br>
