@@ -3,8 +3,10 @@ protect a view source, since f12 and right click can be disabled, so for protect
 
 # emergency release
 
-if you using D5 version update it to 2.0.3.1 D5.1<br>
-`fixing unwanted single filtration on firefox`
+if you using D5 version update it to 2.0.3.2 D5.1 E-F<br>
+`fixing unwanted single filtration on firefox`<br>
+this version is not suitable for production!<br>
+i expect to be production ready when hits version 3 <br><br>
 
 # quick how to use
 ├&nbsp;index.php (can be anything too)<br>
@@ -23,8 +25,6 @@ __introducing secure page builder (read the docs)<br>
 https://github.com/zonblade/php-view-source-protection/tree/main/module/for%20non%20php%20programmers/simple%20websites<br><br>
 *__Sample Codes__*<br><br>
 https://retas.dev/demo_script/viewsource.php?about=load&samplecodes<br>
-this version is not suitable for production!<br>
-i expect to be production ready when hits version 3 <br><br>
 *__whats new?__*<br>
 + multi param! ?home=show&param2=x&param3=x&and_so_on<br>
 + safer method
