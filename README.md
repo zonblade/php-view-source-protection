@@ -3,7 +3,8 @@ protect a view source, since f12 and right click can be disabled, so for protect
 
 # emergency release
 
-if you using D5 version update it to 2.0.3.1 D5.1
+if you using D5 version update it to 2.0.3.1 D5.1<br>
+`fixing unwanted single filtration on firefox`
 
 # quick how to use
 ├&nbsp;index.php (can be anything too)<br>
