@@ -80,6 +80,7 @@ function vsp_start($param,$dir,$load_dir)
         /*
         fungsi clear cookies & redirect
         */
+        $_SESSION['vsp'] = '';
         setcookie("vsp", "", time() - 3600);
         if($load_dir == true){include VSP_LOADER;}else{echo '';};
         header("Refresh:0;url=?$param=load",true,301);
@@ -93,6 +94,7 @@ function vsp_start($param,$dir,$load_dir)
         /*
         fungsi clear cookies & redirect
         */
+        $_SESSION['vsp'] = '';
         setcookie("vsp", "", time() - 3600);
         if($load_dir == true){include VSP_LOADER;}else{echo '';};
         header("Refresh:0;url=?$param=load$back_param",true,301);
@@ -103,11 +105,12 @@ function vsp_start($param,$dir,$load_dir)
     */
     switch($_GET[$param]){
         case "show":
-            if(empty($_COOKIE['vsp']))
+            if(empty($_COOKIE['vsp']) && empty($_SESSION['vsp']))
             {
                 /*
                 fungsi clear cookies & redirect
                 */
+                $_SESSION['vsp'] = '';
                 setcookie("vsp", "", time() - 3600);
                 if($load_dir == true){include VSP_LOADER;}else{echo '';};
                 header("Refresh:0;url=?$param=load$back_param",true,301);
@@ -115,10 +118,12 @@ function vsp_start($param,$dir,$load_dir)
             }else{
                 if($dir == false)
                 {
+                    $_SESSION['vsp'] = '';
                     setcookie("vsp", "", time() - 3600);
                 }
                 else
                 {
+                    $_SESSION['vsp'] = '';
                     setcookie("vsp", "", time() - 3600);
                     include $dir;
                     die();
@@ -129,17 +134,20 @@ function vsp_start($param,$dir,$load_dir)
             /*
             fungsi load, disinilah kuncinya
             */
+            $_SESSION['vsp'] = '';
             setcookie("vsp", "", time() - 3600);
+            $_SESSION['vsp'] = true;
             setcookie("vsp", "true");
             if($load_dir == true){include VSP_LOADER;}else{echo '';};
             header("Refresh:0;url=?$param=show$back_param",true,301);
             die();
         default:
-            if(empty($_COOKIE['vsp']))
+            if(empty($_COOKIE['vsp']) && empty($_SESSION['vsp']))
             {
                 /*
                 fungsi clear cookies & redirect
                 */
+                $_SESSION['vsp'] = '';
                 setcookie("vsp", "", time() - 3600);
                 if($load_dir == true){include VSP_LOADER;}else{echo '';};
                 header("Refresh:0;url=?$param=load$back_param",true,301);
@@ -149,10 +157,12 @@ function vsp_start($param,$dir,$load_dir)
             {
                 if($dir == false)
                 {
+                    $_SESSION['vsp'] = '';
                     setcookie("vsp", "", time() - 3600);
                 }
                 else
                 {
+                    $_SESSION['vsp'] = '';
                     setcookie("vsp", "", time() - 3600);
                     include $dir;
                     die();
@@ -166,6 +176,8 @@ function vsp_init($param,$load_dir)
         /*
         fungsi clear cookies & redirect
         */
+        session_start();
+        $_SESSION['vsp'] = '';
         setcookie("vsp", "", time() - 3600);
         if($load_dir == true){include VSP_LOADER;}else{echo '';};
         header("Refresh:0;url=?$param=load",true,301);
@@ -215,5 +227,6 @@ function vsp_default($var,$dir,$redir_url)
 function vsp_kill()
 {
     session_start();
+    $_SESSION['vsp'] = '';
     setcookie("vsp", "", time() - 3600);
 };
