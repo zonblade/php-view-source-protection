@@ -81,7 +81,7 @@ function vsp_start($param,$dir,$load_dir)
         fungsi clear cookies & redirect
         */
         setcookie("vsp", "", time() - 3600);
-        if($load_dir == true){include VSP_LOADER;};
+        if($load_dir == true){include VSP_LOADER;}else{echo '';};
         header("Refresh:0;url=?$param=load",true,301);
         die();
     }
@@ -94,7 +94,7 @@ function vsp_start($param,$dir,$load_dir)
         fungsi clear cookies & redirect
         */
         setcookie("vsp", "", time() - 3600);
-        if($load_dir == true){include VSP_LOADER;};
+        if($load_dir == true){include VSP_LOADER;}else{echo '';};
         header("Refresh:0;url=?$param=load$back_param",true,301);
         die();
     }
@@ -109,7 +109,7 @@ function vsp_start($param,$dir,$load_dir)
                 fungsi clear cookies & redirect
                 */
                 setcookie("vsp", "", time() - 3600);
-                if($load_dir == true){include VSP_LOADER;};
+                if($load_dir == true){include VSP_LOADER;}else{echo '';};
                 header("Refresh:0;url=?$param=load$back_param",true,301);
                 die();
             }else{
@@ -131,7 +131,7 @@ function vsp_start($param,$dir,$load_dir)
             */
             setcookie("vsp", "", time() - 3600);
             setcookie("vsp", "true");
-            if($load_dir == true){include VSP_LOADER;};
+            if($load_dir == true){include VSP_LOADER;}else{echo '';};
             header("Refresh:0;url=?$param=show$back_param",true,301);
             die();
         default:
@@ -141,7 +141,7 @@ function vsp_start($param,$dir,$load_dir)
                 fungsi clear cookies & redirect
                 */
                 setcookie("vsp", "", time() - 3600);
-                if($load_dir == true){include VSP_LOADER;};
+                if($load_dir == true){include VSP_LOADER;}else{echo '';};
                 header("Refresh:0;url=?$param=load$back_param",true,301);
                 die();
             }
@@ -167,7 +167,7 @@ function vsp_init($param,$load_dir)
         fungsi clear cookies & redirect
         */
         setcookie("vsp", "", time() - 3600);
-        if($load_dir == true){include VSP_LOADER;};
+        if($load_dir == true){include VSP_LOADER;}else{echo '';};
         header("Refresh:0;url=?$param=load",true,301);
         die();
     }
