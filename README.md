@@ -5,6 +5,8 @@ protect a view source, since f12 and right click can be disabled, so for protect
 
 if you using D5 version update it to 2.0.3.2 D5.1 E-F<br>
 `fixing unwanted single filtration on firefox`<br>
+6 des will be released 2.0.4 D6<br>
+fixing various D5 bug: like unwanted session and cookies<br>
 this version is not suitable for production!<br>
 i expect to be production ready when hits version 3 <br><br>
 
