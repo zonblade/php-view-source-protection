@@ -1,4 +1,5 @@
 # php-view-source-protection (devs still active)
+Update 5/1/2021 this project still active
 protect a view source, since f12 and right click can be disabled, so for protecting viewsource this is the way (mandalorian) haha
 
 # emergency release
