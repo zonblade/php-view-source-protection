@@ -48,7 +48,7 @@ LANG_EN documentation<br>
 soon
 <br><br>
 live DEMO:<br>
-https://retas.dev/demo_script/viewsource.php<br>
+https://retas.dev/demo_script/viewsource.php (no longger available)<br>
 latest version (ready to use) check here :<br>
 https://github.com/zonblade/php-view-source-protection/releases<br>
 
